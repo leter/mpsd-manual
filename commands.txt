@@ -1,0 +1,2 @@
+npm --prefix "H:\studio\workspace\mpsd\manual" run dev
+npm --prefix "H:\studio\workspace\mpsd\manual" run build

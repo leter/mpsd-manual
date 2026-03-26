@@ -1,0 +1,1115 @@
+:root {
+  --vp-font-family-base: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", sans-serif;
+  --vp-font-family-mono: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+  --vp-c-brand-1: #1359c8;
+  --vp-c-brand-2: #1d6fe3;
+  --vp-c-brand-3: #4f94ff;
+  --vp-c-brand-soft: rgba(19, 89, 200, 0.12);
+  --manual-teal: #1b8a84;
+  --manual-teal-soft: rgba(27, 138, 132, 0.14);
+  --manual-amber: #c7922f;
+  --manual-amber-soft: rgba(199, 146, 47, 0.14);
+  --manual-rose: #b85f72;
+  --manual-rose-soft: rgba(184, 95, 114, 0.12);
+  --vp-c-bg: #f5f7fb;
+  --vp-c-bg-soft: #eef3fb;
+  --vp-c-bg-alt: #ffffff;
+  --vp-c-divider: rgba(21, 45, 84, 0.1);
+  --vp-c-divider-light: rgba(21, 45, 84, 0.06);
+  --vp-c-text-1: #11233f;
+  --vp-c-text-2: #44536d;
+  --vp-c-text-3: #6a7893;
+  --manual-accent: #c79a4b;
+  --manual-accent-soft: rgba(199, 154, 75, 0.14);
+  --manual-surface: rgba(255, 255, 255, 0.78);
+  --manual-surface-strong: rgba(255, 255, 255, 0.92);
+  --manual-shadow-lg: 0 28px 80px rgba(16, 33, 67, 0.12);
+  --manual-shadow-md: 0 18px 42px rgba(16, 33, 67, 0.1);
+  --manual-radius-xl: 28px;
+  --manual-radius-lg: 22px;
+  --manual-radius-md: 16px;
+  --manual-grid-width: 1340px;
+}
+
+.dark {
+  --vp-c-brand-1: #80abff;
+  --vp-c-brand-2: #5f95f4;
+  --vp-c-brand-3: #b7d0ff;
+  --vp-c-brand-soft: rgba(128, 171, 255, 0.14);
+  --manual-teal: #52b6af;
+  --manual-teal-soft: rgba(82, 182, 175, 0.14);
+  --manual-amber: #e1b35e;
+  --manual-amber-soft: rgba(225, 179, 94, 0.16);
+  --manual-rose: #d68a9c;
+  --manual-rose-soft: rgba(214, 138, 156, 0.14);
+  --vp-c-bg: #0b1321;
+  --vp-c-bg-soft: #111d30;
+  --vp-c-bg-alt: #101927;
+  --vp-c-divider: rgba(179, 201, 235, 0.12);
+  --vp-c-divider-light: rgba(179, 201, 235, 0.08);
+  --vp-c-text-1: #edf3ff;
+  --vp-c-text-2: #b7c4dc;
+  --vp-c-text-3: #8695af;
+  --manual-accent: #dcb470;
+  --manual-accent-soft: rgba(220, 180, 112, 0.14);
+  --manual-surface: rgba(13, 22, 36, 0.74);
+  --manual-surface-strong: rgba(15, 25, 40, 0.9);
+  --manual-shadow-lg: 0 28px 84px rgba(0, 0, 0, 0.45);
+  --manual-shadow-md: 0 18px 48px rgba(0, 0, 0, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* /quieter: Softer body gradient - less busy background */
+body {
+  background:
+    radial-gradient(circle at top left, rgba(95, 137, 219, 0.08), transparent 28%),
+    radial-gradient(circle at 78% 10%, var(--manual-amber-soft), transparent 16%),
+    linear-gradient(180deg, color-mix(in srgb, var(--vp-c-bg) 92%, white 8%) 0%, var(--vp-c-bg) 100%);
+}
+
+.Layout {
+  background: transparent;
+}
+
+.VPNav,
+.VPContent,
+.VPFooter {
+  background: transparent !important;
+}
+
+.VPNavBar {
+  backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--vp-c-bg) 90%, rgba(255, 255, 255, 0.03)) !important;
+  border-bottom: none !important;
+  box-shadow: none;
+}
+
+.VPNavBar .title {
+  border-bottom: none !important;
+}
+
+.VPNavBar::after,
+.VPNavBar .divider,
+.VPNavBar .divider-line,
+.VPNavBar .content-body::after,
+.VPNavBar .content-body::before,
+.VPNav .VPNavBar.has-sidebar .divider {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  height: 0 !important;
+}
+
+.VPNavBar .container,
+.VPDoc .container,
+.VPHome .container {
+  max-width: var(--manual-grid-width) !important;
+}
+
+.VPHome {
+  position: relative;
+}
+
+.VPHome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 26%),
+    radial-gradient(circle at 14% 54%, rgba(58, 123, 171, 0.08), transparent 18%),
+    radial-gradient(circle at 78% 12%, rgba(199, 154, 75, 0.05), transparent 22%);
+}
+
+.VPHero {
+  padding-top: clamp(3.4rem, 7vw, 6.8rem) !important;
+  padding-bottom: clamp(1.2rem, 2vw, 1.8rem) !important;
+}
+
+.VPHero .container {
+  position: relative;
+}
+
+.VPHero .main {
+  max-width: 780px !important;
+}
+
+.VPHero.has-image .container {
+  display: block;
+}
+
+.VPHero .name,
+.VPHero .text {
+  letter-spacing: -0.03em;
+}
+
+.VPHero .name {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.VPHero .text {
+  font-size: clamp(3rem, 4.8vw, 4.5rem) !important;
+  line-height: 0.98 !important;
+  max-width: 10ch;
+  text-wrap: balance;
+  color: var(--vp-c-text-1) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.VPHero .tagline {
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.05vw, 1.08rem) !important;
+  line-height: 1.78 !important;
+  color: var(--vp-c-text-2) !important;
+  letter-spacing: 0;
+  text-wrap: pretty;
+}
+
+.VPHero .actions {
+  gap: 0;
+  margin-top: 22px !important;
+  justify-content: flex-start;
+}
+
+.VPHero .action .VPButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 128px;
+  min-height: 46px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 24%, transparent);
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: center;
+  box-shadow: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.VPHero .action .VPButton.brand {
+  background: linear-gradient(135deg, #1a5ec7 0%, #2a84cb 100%);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(21, 88, 192, 0.16);
+}
+
+.VPHero .action .VPButton.alt {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(21, 45, 84, 0.12);
+  color: var(--vp-c-text-2);
+}
+
+.VPHero .action .VPButton:hover {
+  transform: translateY(-1px);
+}
+
+.VPHero .action .VPButton.brand:hover {
+  box-shadow: 0 18px 32px rgba(21, 88, 192, 0.22);
+}
+
+.VPHero .action .VPButton.alt:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(21, 88, 192, 0.16);
+  color: var(--vp-c-text-1);
+}
+
+.VPHero .image {
+  display: none !important;
+}
+
+.VPHero .main::after {
+  display: none;
+}
+
+.VPFeatures {
+  padding-top: 0 !important;
+  padding-bottom: clamp(1.4rem, 3vw, 2.6rem) !important;
+}
+
+.VPFeatures .container {
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  backdrop-filter: none;
+}
+
+.VPFeatures .items {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px !important;
+}
+
+.VPFeatures .item {
+  min-width: 0;
+  width: 100% !important;
+  max-width: none !important;
+  flex: 0 0 auto !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.VPFeature {
+  position: relative;
+  min-height: 0;
+  width: 100%;
+  border-radius: 0 !important;
+  border: none;
+  background: transparent;
+  box-shadow: none !important;
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-1px);
+  background: transparent;
+}
+
+.VPFeatures .item:nth-child(3n + 2) .VPFeature {
+  background: transparent;
+}
+
+.VPFeatures .item:nth-child(3n) .VPFeature {
+  background: transparent;
+}
+
+.VPFeature .box {
+  height: 100%;
+  padding: 0 2px 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.VPFeature .icon {
+  display: none;
+}
+
+.VPFeature .title {
+  display: block;
+  margin-bottom: 0 !important;
+  color: var(--vp-c-text-1);
+  font-size: 0.98rem !important;
+  line-height: 1.24;
+}
+
+.VPFeature .details {
+  color: var(--vp-c-text-2) !important;
+  line-height: 1.68 !important;
+  font-size: 0.92rem !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 30ch;
+}
+
+.vp-doc .header-anchor {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.vp-doc h2:hover .header-anchor,
+.vp-doc h3:hover .header-anchor,
+.vp-doc h2:focus-within .header-anchor,
+.vp-doc h3:focus-within .header-anchor {
+  opacity: 0.88;
+  transform: translateX(0);
+}
+
+.vp-doc p + ul,
+.vp-doc p + ol {
+  margin-top: 0.55rem;
+}
+
+.vp-doc li > p {
+  margin: 0;
+}
+
+.vp-doc table tbody tr {
+  transition: background-color 180ms ease;
+}
+
+.vp-doc table tbody tr:hover {
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 16%, transparent);
+}
+
+.VPDocAside .outline-link {
+  border-radius: 8px;
+  padding: 3px 0;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.VPDocAside .outline-link:hover,
+.VPDocAside .outline-link.active {
+  background: transparent;
+  color: var(--vp-c-text-1);
+  transform: translateX(1px);
+}
+
+.VPSidebarItem .item .text,
+.VPNavBarTitle .title span {
+  letter-spacing: 0.01em;
+}
+
+.VPLocalSearchBox .DocSearch.DocSearch-Button {
+  border-radius: 999px;
+  border: none;
+  background: color-mix(in srgb, var(--vp-c-bg-alt) 92%, transparent);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.VPLocalSearchBox .DocSearch.DocSearch-Button:hover {
+  background: color-mix(in srgb, var(--vp-c-bg-alt) 96%, transparent);
+}
+
+.VPNavBarAppearance.appearance::before {
+  display: none !important;
+}
+
+.VPNavBar .VPFlyout .button,
+.VPNavBar .VPSwitch {
+  border-radius: 999px;
+  border: none !important;
+  background: color-mix(in srgb, var(--vp-c-bg-alt) 88%, transparent) !important;
+  box-shadow: none !important;
+}
+
+/* /animate: Smoother phone frame state transitions */
+.phone-frame {
+  isolation: isolate;
+  transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 280ms ease,
+              box-shadow 280ms ease,
+              border-color 280ms ease;
+}
+
+.phone-frame::selection,
+.phone-screen img::selection {
+  background: transparent;
+}
+
+.VPDoc {
+  background: transparent;
+}
+
+.VPDoc .container {
+  gap: 18px !important;
+}
+
+.VPDocAside .content,
+.VPLocalNav,
+.VPDocOutlineDropdown summary {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  backdrop-filter: none;
+}
+
+.VPDocAside .content {
+  box-shadow: none;
+}
+
+.VPDoc .content-container,
+.VPDoc.has-aside .content-container {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.vp-doc {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  padding: clamp(1rem, 1.3vw, 1.3rem) clamp(1rem, 1.4vw, 1.25rem) clamp(2rem, 4vw, 3rem);
+  border: none;
+  border-bottom: none;
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45), transparent 14%),
+    color-mix(in srgb, var(--manual-surface-strong) 94%, transparent);
+  box-shadow: var(--manual-shadow-lg);
+  backdrop-filter: blur(18px);
+}
+
+.vp-doc h1 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+}
+
+.vp-doc > blockquote:first-of-type {
+  display: none;
+}
+
+.vp-doc h2 {
+  position: relative;
+  margin-top: clamp(2.5rem, 5vw, 3.8rem);
+  padding-top: clamp(1.15rem, 2vw, 1.4rem);
+  border-top: none;
+  scroll-margin-top: calc(var(--vp-nav-height) + 20px);
+  font-size: clamp(1.55rem, 2.1vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.vp-doc h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.vp-doc h3 {
+  margin-top: 1.7rem;
+  color: var(--vp-c-text-2);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  scroll-margin-top: calc(var(--vp-nav-height) + 18px);
+}
+
+/* /typeset: Better visual rhythm for repeated section patterns */
+.vp-doc h3 + ul,
+.vp-doc h3 + ol,
+.vp-doc h3 + p {
+  margin-top: 0.6rem;
+}
+
+/* /arrange: Tighter spacing between h3 siblings to reduce monotony */
+.vp-doc h3 + h3 {
+  margin-top: 1.2rem;
+}
+
+.vp-doc p,
+.vp-doc li {
+  color: var(--vp-c-text-2);
+  line-height: 1.92;
+  font-size: 1rem;
+}
+
+.vp-doc strong {
+  color: var(--vp-c-text-1);
+  font-weight: 700;
+}
+
+.vp-doc ul,
+.vp-doc ol {
+  margin: 1rem 0 1.35rem;
+}
+
+.vp-doc ol > li,
+.vp-doc ul > li {
+  margin-bottom: 0.48rem;
+  padding-left: 0.2rem;
+}
+
+.vp-doc hr {
+  display: none;
+}
+
+.vp-doc table {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--vp-c-divider-light);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--manual-surface) 90%, transparent);
+}
+
+.vp-doc table th,
+.vp-doc table td {
+  padding: 14px 16px;
+  border-top: 1px solid var(--vp-c-divider-light);
+  word-break: keep-all;
+  white-space: normal;
+  vertical-align: middle;
+}
+
+.vp-doc table tr:first-child th {
+  border-top: none;
+}
+
+.vp-doc table th {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--manual-teal-soft) 22%, var(--vp-c-bg-soft)) 0%, color-mix(in srgb, var(--manual-amber-soft) 12%, var(--vp-c-bg-alt)) 100%);
+  color: var(--vp-c-text-1);
+  font-weight: 700;
+}
+
+.vp-doc blockquote {
+  margin: 1.2rem 0;
+  padding: 16px 18px;
+  border: 1px solid var(--vp-c-divider-light);
+  border-left: 3px solid var(--manual-amber);
+  border-radius: 0 var(--manual-radius-md) var(--manual-radius-md) 0;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--vp-c-brand-soft) 24%, var(--manual-surface-strong)) 0%, color-mix(in srgb, var(--manual-teal-soft) 20%, var(--manual-surface-strong)) 100%);
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc blockquote p {
+  margin: 0;
+}
+
+.vp-doc a {
+  font-weight: 600;
+  text-decoration-color: color-mix(in srgb, var(--manual-teal) 42%, transparent);
+}
+
+@media (min-width: 1100px) {
+  /* /arrange: Wider screenshot column for legibility */
+  .vp-doc.two-column-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) 300px;
+    column-gap: 18px;
+    align-items: start;
+  }
+
+  .vp-doc.two-column-layout h1 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    text-wrap: balance;
+  }
+
+  .vp-doc.two-column-layout > * {
+    grid-column: 1;
+  }
+
+  /* /arrange: Wider phone panel for better legibility */
+  .vp-doc.two-column-layout > .screenshot-panel {
+    grid-column: 2;
+    grid-row: 1 / 9999;
+    position: sticky;
+    top: calc(var(--vp-nav-height) + 30px);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-right: 2px;
+    padding-bottom: 24px;
+    max-height: calc(100vh - var(--vp-nav-height) - 36px);
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .vp-doc.two-column-layout > .screenshot-panel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vp-doc.two-column-layout.appendix-focused {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vp-doc.two-column-layout.appendix-focused > .screenshot-panel {
+    display: none;
+  }
+
+}
+
+@media (max-width: 1099px) {
+  .vp-doc img {
+    max-width: 360px;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 20px;
+    border: 1px solid var(--vp-c-divider-light);
+    box-shadow: var(--manual-shadow-md);
+    display: block;
+  }
+}
+
+/* /arrange: Larger phone frame for readability */
+.phone-frame {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px 9px 15px;
+  border-radius: 32px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 20%),
+    #101317;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 30px rgba(7, 12, 22, 0.28);
+  position: relative;
+  transition: transform 220ms ease, opacity 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.phone-frame::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 74px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.phone-frame:hover {
+  transform: translateY(-3px);
+}
+
+.phone-frame.active {
+  border-color: color-mix(in srgb, var(--manual-amber) 52%, transparent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px color-mix(in srgb, var(--manual-teal) 36%, transparent),
+    0 26px 46px rgba(7, 12, 22, 0.42);
+}
+
+.phone-frame.inactive {
+  opacity: 0.46;
+  transform: scale(0.982);
+}
+
+.phone-frame.inactive:hover {
+  opacity: 0.78;
+  transform: scale(1);
+}
+
+.phone-screen {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #05070b;
+  line-height: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.phone-screen img {
+  width: 100%;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 220ms ease;
+}
+
+.phone-screen img:hover {
+  transform: scale(1.012);
+}
+
+:root:not(.dark) .phone-frame {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 20%),
+    #18202c;
+}
+
+.medium-zoom-overlay {
+  z-index: 9000 !important;
+  background: rgba(5, 8, 14, 0.92) !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 9001 !important;
+  border-radius: 16px !important;
+}
+
+.vp-doc p img[style*="display: none"] {
+  display: none !important;
+}
+
+.vp-doc p:empty,
+.vp-doc p:not(:has(*:not([style*="display: none"]))) {
+  display: none;
+}
+
+/* ── Dark-mode fixes for hardcoded white/light values ── */
+
+/* /quieter: Simpler dark body gradient */
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(95, 137, 219, 0.04), transparent 28%),
+    var(--vp-c-bg);
+}
+
+.dark .VPHome::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 26%),
+    radial-gradient(circle at 14% 54%, rgba(128, 171, 255, 0.05), transparent 18%),
+    radial-gradient(circle at 78% 12%, rgba(220, 180, 112, 0.04), transparent 22%);
+}
+
+.dark .VPNavBar {
+  background: color-mix(in srgb, var(--vp-c-bg) 94%, rgba(255, 255, 255, 0.01)) !important;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+}
+
+
+.dark .VPHero .action .VPButton.alt {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--vp-c-text-2);
+}
+
+.dark .VPHero .action .VPButton.alt:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--vp-c-text-1);
+}
+
+.dark .VPHero .action .VPButton.brand {
+  box-shadow: 0 10px 24px rgba(19, 89, 200, 0.24);
+}
+
+.dark .VPFeature {
+  background: transparent;
+  box-shadow: none !important;
+}
+
+.dark .VPFeature:hover {
+  background: transparent;
+}
+
+.dark .VPFeatures .item:nth-child(3n + 2) .VPFeature {
+  background: transparent;
+}
+
+.dark .VPFeatures .item:nth-child(3n) .VPFeature {
+  background: transparent;
+}
+
+.dark .vp-doc {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 14%),
+    color-mix(in srgb, var(--manual-surface-strong) 94%, transparent);
+}
+
+/* ── Keyboard focus indicators (WCAG 2.4.7) ── */
+
+:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+.VPHero .action .VPButton:focus-visible {
+  outline-offset: 3px;
+}
+
+/* ── Touch device: disable transform-based hover shifts ── */
+
+@media (hover: none) {
+  .VPFeature:hover {
+    transform: none;
+  }
+
+  .phone-frame:hover {
+    transform: none;
+  }
+
+  .phone-screen img:hover {
+    transform: none;
+  }
+
+  .VPHero .action .VPButton:hover {
+    transform: none;
+  }
+}
+
+/* ── Tablet: 2-column features grid ── */
+
+@media (min-width: 640px) and (max-width: 959px) {
+}
+
+@media (max-width: 960px) {
+  .VPHero.has-image .container {
+    grid-template-columns: 1fr;
+  }
+
+  .VPHero .main::after {
+    display: none;
+  }
+
+  .vp-doc {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 22px;
+  }
+
+  .VPFeatures .container {
+    padding: 1rem;
+    border-radius: 22px;
+  }
+}
+
+/* /adapt: Small mobile - tighter typography */
+@media (max-width: 639px) {
+  .vp-doc h2 {
+    font-size: 1.35rem;
+  }
+
+  .vp-doc h3 {
+    font-size: 0.98rem;
+  }
+
+  .vp-doc table {
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+
+  .vp-doc table th,
+  .vp-doc table td {
+    padding: 10px 12px;
+  }
+
+  .vp-doc img {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .VPButton,
+  .VPFeature,
+  .phone-frame,
+  .phone-screen img,
+  .vp-doc .header-anchor,
+  .vp-doc table tbody tr,
+  .VPDocAside .outline-link {
+    transition: none !important;
+  }
+}
+
+/* ── /harden: Print stylesheet ── */
+@media print {
+  .VPNav,
+  .VPSidebar,
+  .VPDocAside,
+  .VPLocalNav,
+  .VPFooter,
+  .screenshot-panel,
+  .phone-frame,
+  .header-anchor,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .vp-doc {
+    background: white !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .vp-doc.two-column-layout {
+    display: block !important;
+  }
+
+  .vp-doc img {
+    display: block !important;
+    max-width: 320px !important;
+    margin: 12px auto !important;
+    break-inside: avoid;
+  }
+
+  .vp-doc h2 {
+    break-after: avoid;
+  }
+
+  .vp-doc table {
+    break-inside: avoid;
+  }
+}
+
+/* ── /animate: Smooth section entrance on scroll ── */
+.vp-doc h2 {
+  animation: sectionFadeIn 0.4s ease both;
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── /delight: Active sidebar link micro-interaction ── */
+.VPSidebarItem .item .link.active .text {
+  transition: transform 180ms ease, color 180ms ease;
+  transform: translateX(2px);
+}
+
+/* ── /delight: Return-to-top smooth indicator ── */
+.vp-doc h2:first-of-type {
+  scroll-margin-top: calc(var(--vp-nav-height) + 32px);
+}
+
+/* ── /polish: Consistent code-in-table rendering ── */
+.vp-doc table code {
+  font-size: 0.85em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--vp-c-bg-soft);
+  white-space: nowrap;
+}
+
+/* ── /delight: Scroll-to-top button ── */
+.scroll-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--manual-surface-strong);
+  backdrop-filter: blur(12px);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 280ms ease, transform 280ms ease, background 180ms ease;
+  z-index: 50;
+  box-shadow: var(--manual-shadow-md);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+}
+
+/* ── /adapt: Table overflow wrapper for narrow screens ── */
+.vp-doc table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
+}
+
+/* ── /bolder: Quick start numbered circles ── */
+.vp-doc h2#_3-快速上手 ~ ol > li,
+.vp-doc h2[id*="快速上手"] ~ ol > li {
+  list-style: none;
+  counter-increment: quickstart;
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.vp-doc h2#_3-快速上手 ~ ol > li::before,
+.vp-doc h2[id*="快速上手"] ~ ol > li::before {
+  content: counter(quickstart);
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.vp-doc h2#_3-快速上手 ~ ol,
+.vp-doc h2[id*="快速上手"] ~ ol {
+  counter-reset: quickstart;
+  padding-left: 0;
+}
+
+/* ── /harden: Dark mode table/code/link contrast ── */
+.dark .vp-doc table code {
+  background: rgba(128, 171, 255, 0.12);
+  color: var(--vp-c-brand-1);
+}
+
+.dark .vp-doc table a {
+  color: var(--vp-c-brand-1);
+}
+
+.dark .vp-doc table a:hover {
+  color: var(--vp-c-brand-3);
+}
+
+/* ── /adapt: Prevent sidebar/phone-panel overlap at 1100-1200px ── */
+@media (min-width: 1100px) and (max-width: 1250px) {
+  .vp-doc.two-column-layout {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    column-gap: 12px;
+  }
+
+  .phone-frame {
+    max-width: 220px;
+  }
+}
+
+/* ── /harden: Phone frame right-click & drag prevention ── */
+.phone-screen img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* ── /polish: Sidebar active item left indicator ── */
+.VPSidebarItem .item .link.active {
+  position: relative;
+}
+
+.VPSidebarItem .item .link.active::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--vp-c-brand-1);
+  transition: height 180ms ease;
+}
+
+
