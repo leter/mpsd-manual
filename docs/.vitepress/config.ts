@@ -6,7 +6,7 @@ export default defineConfig({
   description: '名片秒递微信小程序用户操作手册 — 创建、分享、交换电子名片的完整使用指南',
   lang: 'zh-CN',
   cleanUrls: true,
-  srcExclude: ['index.md'],
+  srcExclude: [],
 
   head: [
     ['meta', { name: 'keywords', content: '名片秒递,电子名片,微信小程序,名片交换,用户手册' }],

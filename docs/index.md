@@ -4,6 +4,6 @@ layout: false
 
 <script>
   if (typeof window !== 'undefined') {
-    window.location.replace('/user-manual')
+    window.location.replace('/-mpsd-manual/user-manual')
   }
 </script>
