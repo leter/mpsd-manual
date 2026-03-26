@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  base: '/-mpsd-manual/',
+  base: '/mpsd-manual/',
   title: '名片秒递',
   description: '名片秒递微信小程序用户操作手册 — 创建、分享、交换电子名片的完整使用指南',
   lang: 'zh-CN',
